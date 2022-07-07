@@ -54,7 +54,7 @@ function App() {
                   }}
                 >
                   <Label>Preço:</Label>
-                  <span style={{ color: 'black' }}> {item.price} </span>
+                  <span style={{ color: '#60401f', fontWeight: 'bold' }}> R$ {item.price} </span>
                 </li>
                 <li>
                   <div
@@ -66,7 +66,7 @@ function App() {
                   >
                     <Label>Descrição:</Label>
 
-                    <span style={{ color: 'black' }}>{item.desc}</span>
+                    <span style={{ color: '#60401f', fontWeight: 'bold' }}>{item.desc}</span>
                   </div>
                 </li>
               </ul>

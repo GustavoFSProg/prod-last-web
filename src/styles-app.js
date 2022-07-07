@@ -33,11 +33,14 @@ export const Card = styled.div`
 `
 export const Title = styled.div`
   display: flex;
+  font-family: Rubik Moonrocks;
   font-size: 1.9rem;
   font-weight: bold;
   margin-bottom: 26px;
   align-items: center;
   justify-content: center;
+  color: #004080;
+  line-height: 10px;
 
   @media screen and (max-width: 800px) {
     font-size: 1.3rem;
