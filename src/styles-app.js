@@ -9,6 +9,8 @@ export const Container = styled.div`
   @media screen and (max-width: 800px) {
     flex-direction: column;
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 export const Card = styled.div`
