@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import api from './api'
-import { Container, Card, Title, Label } from './styles-app'
+import { Container, Card, Title, Label, Item } from './styles-app'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -54,7 +54,7 @@ function App() {
                   }}
                 >
                   <Label>Preço:</Label>
-                  <span style={{ color: '#60401f', fontWeight: 'bold' }}> R$ {item.price} </span>
+                  <Item> R$ {item.price} </Item>
                 </li>
                 <li>
                   <div
@@ -66,7 +66,7 @@ function App() {
                   >
                     <Label>Descrição:</Label>
 
-                    <span style={{ color: '#60401f', fontWeight: 'bold' }}>{item.desc}</span>
+                    <Item>{item.desc}</Item>
                   </div>
                 </li>
               </ul>

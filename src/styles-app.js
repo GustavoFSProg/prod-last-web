@@ -58,3 +58,15 @@ export const Label = styled.div`
     font-size: 1rem;
   }
 `
+
+export const Item = styled.span`
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  color: #60401f;
+  font-weight: bold;
+
+  @media screen and (max-width: 800px) {
+    font-size: 0.9rem;
+  }
+`
