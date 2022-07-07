@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import api from './api'
-import { Container, Card } from './styles-app'
+import { Container, Card, Title, Label } from './styles-app'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -28,7 +28,7 @@ function App() {
         paddingBottom: '135px',
       }}
     >
-      <h1> Products</h1>
+      <h2> Products</h2>
       <Container>
         {products.map((item) => {
           return (
@@ -40,18 +40,34 @@ function App() {
               >
                 <br />
                 <li>
-                  <h1>{item.title}</h1>
+                  <Title>{item.title}</Title>
                 </li>
                 <li>
                   <img width="180" src={item.image} alt="imagem" />
                 </li>
-                <li>
-                  <strong>Preço:</strong>
-                  {item.price}
+                <li
+                  style={{
+                    marginTop: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    // justifyContent: 'center',
+                  }}
+                >
+                  <Label>Preço:</Label>
+                  <span style={{ color: 'black' }}> {item.price} </span>
                 </li>
                 <li>
-                  <strong>Descrição:</strong>
-                  {item.desc}
+                  <div
+                    style={{
+                      marginTop: '10px',
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Label>Descrição:</Label>
+
+                    <span style={{ color: 'black' }}>{item.desc}</span>
+                  </div>
                 </li>
               </ul>
             </Card>
