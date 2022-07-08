@@ -34,8 +34,8 @@ function Register() {
         <Header />
         <h2> Cadastro</h2>
         <div>
-          <Form style={{}}>
-            <Label> Imagem:</Label> <Input type="file" />
+          <Form>
+            <Label> Imagem:</Label> <input type="file" />
             <Label>Title:</Label>
             <Input type="text" />
             <Label>Descrição:</Label> <Input type="text" />
