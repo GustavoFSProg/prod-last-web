@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import api from './api'
-import { Container, Card, Title, Label, Item } from './styles-app'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import { Container, Card, Title, Label, Item, Li } from './styles-app'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -19,62 +21,66 @@ function App() {
   }, [])
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingBottom: '135px',
-      }}
-    >
-      <h2> Products</h2>
-      <Container>
-        {products.map((item) => {
-          return (
-            <Card key={item.id}>
-              <ul
-                style={{
-                  listStyle: 'none',
-                }}
-              >
-                <br />
-                <li>
-                  <Title>{item.title}</Title>
-                </li>
-                <li>
-                  <img width="180" src={item.image} alt="imagem" />
-                </li>
-                <li
+    <>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingBottom: '135px',
+        }}
+      >
+        <Header />
+        <h2> Products</h2>
+        <Container>
+          {products.map((item) => {
+            return (
+              <Card key={item.id}>
+                <ul
                   style={{
-                    marginTop: '15px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    // justifyContent: 'center',
+                    listStyle: 'none',
                   }}
                 >
-                  <Label>Preço:</Label>
-                  <Item> R$ {item.price} </Item>
-                </li>
-                <li>
-                  <div
+                  <br />
+                  <Li>
+                    <Title>{item.title}</Title>
+                  </Li>
+                  <li>
+                    <img width="180" src={item.image} alt="imagem" />
+                  </li>
+                  <li
                     style={{
-                      marginTop: '10px',
+                      marginTop: '15px',
                       display: 'flex',
                       alignItems: 'center',
+                      // justifyContent: 'center',
                     }}
                   >
-                    <Label>Descrição:</Label>
+                    <Label>Preço:</Label>
+                    <Item> R$ {item.price} </Item>
+                  </li>
+                  <li>
+                    <div
+                      style={{
+                        marginTop: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <Label>Descrição:</Label>
 
-                    <Item>{item.desc}</Item>
-                  </div>
-                </li>
-              </ul>
-            </Card>
-          )
-        })}
-      </Container>
-    </div>
+                      <Item>{item.desc}</Item>
+                    </div>
+                  </li>
+                </ul>
+              </Card>
+            )
+          })}
+        </Container>
+      </div>
+      <Footer />
+    </>
   )
 }
 

@@ -16,7 +16,6 @@ export const Container = styled.div`
 export const Card = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   width: 100%;
   background: #b3ffb3;
   height: 400px;
@@ -29,6 +28,7 @@ export const Card = styled.div`
     padding-left: 10px;
     height: auto;
     margin-bottom: 50px;
+    /* justify-content: center; */
   }
 `
 export const Title = styled.div`
@@ -37,8 +37,6 @@ export const Title = styled.div`
   font-size: 1.9rem;
   font-weight: bold;
   margin-bottom: 26px;
-  align-items: center;
-  justify-content: center;
   color: #004080;
   line-height: 10px;
 
@@ -56,6 +54,14 @@ export const Label = styled.div`
 
   @media screen and (max-width: 800px) {
     font-size: 1rem;
+  }
+`
+
+export const Li = styled.div`
+  @media screen and (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 
