@@ -13,14 +13,14 @@ export const Label = styled.span`
 export const Input = styled.input`
   width: 100%;
   background: #ffffcc;
-  height: 40px;
+  height: 45px;
   border-radius: 10px;
   border: 1px solid #cccc00;
 `
 export const Button = styled.button`
   width: 100%;
   background: #80ffbf;
-  height: 42px;
+  height: 45px;
   border-radius: 12px;
   margin-top: 20px;
   border: 1px solid #00e673;
