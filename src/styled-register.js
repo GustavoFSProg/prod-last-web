@@ -39,6 +39,6 @@ export const Form = styled.div`
   width: 370px;
 
   @media screen and (max-width: 700px) {
-    width: 99%;
+    width: 98%;
   }
 `
