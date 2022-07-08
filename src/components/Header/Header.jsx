@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom'
 import { Container } from './style-header'
 
 function Header() {
   return (
     <>
       <Container>
-        <a href="#" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
           HOME
-        </a>
-        <a href="#" style={{ textDecoration: 'none' }}>
+        </Link>
+        <Link to="/register" style={{ textDecoration: 'none' }}>
           CADASTRO
-        </a>
-        <a href="#" style={{ textDecoration: 'none' }}>
+        </Link>
+        <Link to="/" style={{ textDecoration: 'none' }}>
           ABOUT
-        </a>
+        </Link>
       </Container>
     </>
   )
