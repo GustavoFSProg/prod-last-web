@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom'
-import { Container } from './style-header'
+import SimpleMenu from '../Menu/menu'
+import { Container, LinksContainer } from './style-header'
 
 function Header() {
   return (
     <>
       <Container>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          HOME
-        </Link>
-        <Link to="/register" style={{ textDecoration: 'none' }}>
-          CADASTRO
-        </Link>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          ABOUT
-        </Link>
+        <SimpleMenu />
+        <LinksContainer>
+          <Link to="/" style={{ color: 'blue', textDecoration: 'none' }}>
+            HOME
+          </Link>
+          <Link to="/register" style={{ color: 'blue', textDecoration: 'none' }}>
+            CADASTRO
+          </Link>
+          <Link to="/" style={{ color: 'blue', textDecoration: 'none' }}>
+            ABOUT
+          </Link>
+        </LinksContainer>
       </Container>
     </>
   )
