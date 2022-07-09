@@ -1,24 +1,39 @@
-import { useEffect } from 'react'
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import api from './api'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import { Label, Input, Button, Form } from './styled-register'
 
 function Register() {
-  const [products, setProducts] = useState([])
+  const [title, setTitle] = useState('')
+  const [desc, setDesc] = useState('')
+  const [price, setPrice] = useState('')
+  const [image, setImage] = useState([])
 
-  async function handleProducts() {
-    const { data } = await api.get('/get-all')
+  const history = useHistory()
 
-    setProducts(data)
+  async function handleSubmit(event) {
+    event.preventDefault()
 
-    return data
+    try {
+      const data = new FormData()
+
+      data.append('title', title)
+      data.append('price', price)
+      data.append('desc', desc)
+      data.append('image', image)
+
+      await api.post(`/register`, data)
+
+      history.push('/')
+
+      return alert('Cadastro realizado com sucesso!')
+    } catch (error) {
+      console.log(error)
+      return alert(`Deu erro no front ${error}`)
+    }
   }
-
-  useEffect(() => {
-    handleProducts()
-  }, [])
 
   return (
     <>
@@ -34,12 +49,25 @@ function Register() {
         <Header />
         <h2> Cadastro</h2>
         <div>
-          <Form>
-            <Label> Imagem:</Label> <input type="file" />
+          <Form onSubmit={handleSubmit}>
+            <Label> Imagem:</Label>
+            <input type="file" id="image" onChange={(e) => setImage(e.target.files[0])} />
             <Label>Title:</Label>
-            <Input type="text" />
-            <Label>Descrição:</Label> <Input type="text" />
-            <Label> Preço:</Label> <Input type="text" />
+            <Input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <Label>Descrição:</Label>
+            <Input id="desc" value={desc} onChange={(e) => setDesc(e.target.value)} />
+            <Label> Preço:</Label>
+            <Input
+              id="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              type="text"
+            />
             <Button type="submit">CADASTRAR</Button>
           </Form>
         </div>
