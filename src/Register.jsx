@@ -24,7 +24,7 @@ function Register() {
       data.append('desc', desc)
       data.append('image', image)
 
-      await api.post(`/register`, data)
+      await api.post(`/`, data)
 
       history.push('/')
 
